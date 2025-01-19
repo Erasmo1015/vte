@@ -1,0 +1,21 @@
+# @package _global_
+
+method:
+  type: iq
+  loss: value
+
+  constrain: False
+  grad_pen: False
+  chi: False
+  tanh: False
+  regularize: False
+  div:
+
+  alpha: 0.5
+  lambda_gp: 10
+  mix_coeff: 1
+  bc_init: False
+  enable_bc_critic_update: False
+  enable_bc_actor_update: False
+  bc_alpha: 0.5
+  kld_alpha: 1

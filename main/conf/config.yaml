@@ -1,0 +1,89 @@
+# hydra:
+#   run:
+#     dir: /careAIDrive/zichang/misc/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+exp_name: ''
+project_name: ${env.name}
+
+cuda_deterministic: False
+device: ??? # to be specified later
+
+gamma: 0.99
+seed: 0
+pretrain: null
+cond_dim: 10 # dimension of conditional input (e.g. goal)
+cond_type: none # whether use random index or fixed index 0 when expert.demos=1
+wandb: True # whether use wandb or not
+
+num_seed_steps: 0 # Don't need seeding for IL (Use 1000 for RL)
+only_expert_states: False
+
+env_name: ${env.name} # for wandb grouping
+agent_name: ${agent.name} # for wandb grouping
+
+train:
+  batch: 32
+  use_target: False
+  soft_update: False
+
+expert:
+  demos: 1
+  subsample_freq: 1
+
+eval:
+  policy: 
+  threshold:
+  use_baselines: False
+  eps: 10
+  transfer: False
+  expert_env: ''
+
+env:
+  replay_mem: 50000
+  initial_mem: 1280
+  eps_steps: 1000
+  eps_window: 100
+  learn_steps: 5e5
+  eval_interval: 5e3
+
+  # use pixels
+  from_pixels: False
+
+method:
+  type: iq
+
+# Extra args
+log_interval: 100  # Log every this many steps
+log_dir: logs/
+save_interval: 5 # Save networks every this many epochs
+hydra_base_dir: ""
+eval_only: False
+
+# Do offline learning
+offline: False
+# Number of actor updates per env step
+num_actor_updates: 1
+
+defaults:
+  - method: iq
+  - agent: softq
+  - env: cartpole
+
+bc_steps: 1000
+bc_save_interval: 500
+exp_dir: '/home/zichang/proj/IQ-Learn/iq_learn/encoder/experiments/hopper/'
+encoder: 'model-10.ckpt'
+expert_gen_steps: 1000
+
+cql_coef: 1 # conservative loss weight
+num_random: 5 # conservative randoms
+additional_loss: none # none, CQL, currentQ or combined
+
+num_levels: 2 # number of skill levels, only used for logging purpose
+
+experimental: none # If true, add evaluation of avg condition between two levels
+
+save_last: False # Save the last model
+
+exp_id: no_id # experiment id
+en_lr: 3e-05 # encoder learning rate

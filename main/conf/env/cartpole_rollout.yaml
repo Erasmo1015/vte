@@ -1,0 +1,22 @@
+# @package _global_
+
+env:
+  name: seals/CartPole-v0
+  demo: CartPole-v1_25_500r.pkl # Expert demo containing upto 1000 trajectories
+  cond: cartpole.pkl
+  learn_steps: 1e5
+  eval_interval: 1e3
+
+expert:
+  demos: 25
+  subsample_freq: 20
+
+eval:
+  policy: 
+  threshold: 10
+  use_baselines: True
+
+q_net:
+  _target_: agent.softq_models.OfflineQNetwork
+
+log_interval: 500

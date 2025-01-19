@@ -1,0 +1,37 @@
+# @package _global_
+
+env:
+  short_name: lunarlander
+  name: LunarLander-v2
+  demo: InvertedPendulum-v2_25.pkl
+  cond: invertedp/InvertedPendulum-v2_20_876r+3213r.pkl
+
+  replay_mem: 1e6
+
+  eps_steps: 100000
+  eps_window: 10
+  learn_steps: 5e5
+  eval_interval: 5e3
+
+expert:
+  demos: 1
+  subsample_freq: 5
+
+eval:
+  policy: 
+  threshold: 0
+  upper: 1e6
+
+agent:
+  name: softq
+
+log_interval: 500  # Log every this many steps
+num_actor_updates: 1
+
+train:
+  use_target: true
+  soft_update: true
+  batch: 256
+
+q_net:
+  _target_: agent.softq_models.OfflineQNetwork

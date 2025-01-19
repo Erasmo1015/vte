@@ -1,0 +1,9 @@
+goal_dim: 1  # return-to-go
+batch_size: 32
+lr: 1e-3
+ctx_size: 5
+future_horizon: 20
+# epochs: 100
+epochs: 220000
+use_scheduler: False
+num_eval_rollouts: 10
