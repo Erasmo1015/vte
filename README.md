@@ -18,6 +18,10 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
+Please download the dataset from this link:
+[Dropbox Link](https://www.dropbox.com/scl/fo/4pn7str4yl8bwzolmq8ii/AMei8NZzlLh_ysmTGThM9BQ?rlkey=97lfiyykuyab7cxwk7wnduq0n&st=klhzccha&dl=0)
+Move the folder inside vte/main/ (e.g. vte/main/experts)
+
 ### Training script
 We provide sample training scripts for Hopper and Half-Cheetah environment:
 

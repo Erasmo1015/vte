@@ -142,7 +142,6 @@ main/test
 *.zip
 *.txt
 *.pkl
-*.sh
 *.ckpt
 *.mp4 
 *.meta.json
