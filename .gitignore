@@ -138,7 +138,7 @@ main/data
 main/cond
 main/test
 
-*.png
+main/*.png
 *.zip
 *.txt
 *.pkl
