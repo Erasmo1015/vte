@@ -1,0 +1,28 @@
+gym[box2d]==0.17.1
+hydra-core==1.0.6
+stable_baselines3==1.0
+tensorboard==2.4.0
+tensorboardX==2.1
+tornado==5.1.1
+tqdm==4.42.1
+wandb==0.13.10
+opencv-python==4.5.1.48
+
+# NOT WITH PIP 
+# torch==1.10.0
+# torchvision==0.11.1
+# cudatoolkit==11.3
+# conda install pytorch==1.10.0 torchvision==0.11.1 torchaudio cudatoolkit=11.3 -c pytorch
+# atari-py==0.2.6
+# gym_minigrid==1.0.2
+# mujoco_py==2.0.2
+
+# VTE required modules
+# pyvirtualdisplay
+# lightning
+
+# GCPC required modules
+# protobuf==3.19.6
+# cython==0.29.33
+# git+https://github.com/Farama-Foundation/d4rl@master#egg=d4rl
+

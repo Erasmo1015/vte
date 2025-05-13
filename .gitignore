@@ -140,7 +140,7 @@ main/test
 
 main/*.png
 *.zip
-*.txt
+# *.txt
 *.pkl
 *.ckpt
 *.mp4 
