@@ -152,7 +152,7 @@ main/*.png
 *.npy
 *.pdf
 
-main/scripts
+# main/scripts
 main/encoder/experiments
 main/encoder/wandb
 main/encoder/outputs

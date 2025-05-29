@@ -2,7 +2,7 @@
 [![Paper Arvix](https://img.shields.io/badge/Paper-Arvix%20Link-green)](https://arxiv.org/abs/2501.09327)
 [![Code License](https://img.shields.io/badge/Code%20License-MIT-yellow.svg)](https://github.com/Erasmo1015/vte/blob/main/LICENSE)
 
-This repository contains the implementation of the paper On Learning Informative Trajectory Embeddings for Imitation, Classification and Regression. We introduce an unsupervised approach called Variational Trajectory Encoding (VTE) for encoding state-action trajectories into informative embeddings without the need for external reward or goal labels.
+This repository contains the implementation of the paper On Learning Informative Trajectory Embeddings for Imitation, Classification and Regression, published in the proceeding of the 24th International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS 2025). We introduce an unsupervised approach called Variational Trajectory Encoding (VTE) for encoding state-action trajectories into informative embeddings without the need for external reward or goal labels.
 <img src="./VTE.png" width="1000px"></img>
 
 ## Setup
@@ -39,6 +39,9 @@ bash pipeline.sh --SHORT_NAME cheetah --ENV_NAME HalfCheetah-v2 --LEVEL 3 --KLD_
 
 ### Imitation learning task
 The imitation learning task is completed in the last stage of the pipeline script (e.g. stage 3).
+
+We also provide sample python commands for the imitation learning task in main/scripts/sample_script.sh. After stage 2 is completed in the pipeline, these commands can be called directly outside the pipeline for tuning the hyperparameters easily.
+
 
 ### Embedding the trajectories
 Once the training is finished (after stage 2), the encoder model can be used to embed 900 trajectories prepared for classification and regression learning task. 
