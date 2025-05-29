@@ -132,7 +132,7 @@ dmypy.json
 main/.vscode
 main/outputs
 main/wandb
-main/envs
+# main/envs
 main/experts
 main/data
 main/cond
